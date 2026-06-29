@@ -164,7 +164,7 @@ repositories shall be provided.
 
 This list should not be considered exhaustive until the completion of this project. This list will
 be updated as the project evolves. The names of the extensions, their license and any links to
-repositiories shall be provided.
+repositories shall be provided.
 
 - CodeLLDB
   - Author: Vadim Chugunov
