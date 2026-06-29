@@ -30,6 +30,28 @@
         "title": "Programming Screen Reader: Read Diagnostics Near Cursor"
       }
     ],
+    "keybindings": [
+      {
+        "command": "programmingScreenReader.readCurrentLine",
+        "key": "ctrl+shift+alt+1",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "programmingScreenReader.readCurrentSymbol",
+        "key": "ctrl+shift+alt+2",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "programmingScreenReader.readCurrentScope",
+        "key": "ctrl+shift+alt+3",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "programmingScreenReader.readDiagnosticsNearCursor",
+        "key": "ctrl+shift+alt+4",
+        "when": "editorTextFocus"
+      }
+    ],
     "configuration": {
       "title": "Programming Screen Reader",
       "properties": {
