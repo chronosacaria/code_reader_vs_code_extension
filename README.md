@@ -1,4 +1,4 @@
-# Code Reader VS Code Extension
+# Code Reader VS Code Extension (VERY WIP)
 
 The Code Reader VS Code extension connects VS Code to the Code Reader Core so that blind and low vision
 developers can request code-aware spoken feedback at various levels of their code from symbol, line, scope, etc.
@@ -11,6 +11,55 @@ can then be read to the user.
 - Return readable, speech-friendly descriptions of code instead of raw punctuation-heavy text.
 - Support multiple request types, such as current line, current symbol, current scope, diagnostics, etc.
 - Provide optional speech output while still showing results in a VS Code output channel.
+
+## Commands
+
+The following commands are added to VS Code by this extension:
+
+| Command Palette Name                                    | Command ID                                          | Description                                                                                    |
+| ------------------------------------------------------- | --------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Programming Screen Reader: Read Current Line            | `programmingScreenReader.readCurrentLine`           | Reads out a description of the current line.                                                   |
+| Programming Screen Reader: Read Current Symbol          | `programmingScreenReader.readCurrentSymbol`         | Reads out the symbol or token that is under the cursor.                                        |
+| Programming Screen Reader: Read Current Scope           | `programmingScreenReader.readCurrentScope`          | Reads out the current local scope, such as a function, class, loop or conditional block.       |
+| Programming Screen Reader: Read Diagnostics Near Cursor | `programmingScreenReader.readDiagnosticsNearCursor` | Reads out any diagnostic information related to code that is near the current cursor position. |
+
+## Default Keybind Shortcuts
+
+The following keybind shortcuts[^1] are added to VS Code by this extension:
+
+| Keybind                        | Command                                                 |
+| ------------------------------ | ------------------------------------------------------- |
+| `CRTL` + `SHIFT` + `ALT` + `1` | Programming Screen Reader: Read Current Line            |
+| `CRTL` + `SHIFT` + `ALT` + `2` | Programming Screen Reader: Read Current Symbol          |
+| `CRTL` + `SHIFT` + `ALT` + `3` | Programming Screen Reader: Read Current Scope           |
+| `CRTL` + `SHIFT` + `ALT` + `4` | Programming Screen Reader: Read Diagnostics Near Cursor |
+
+[^1]: These keybind shortcuts are temporary. These are their current states until more ergonomic combinations are determined.
+
+## Settings
+
+The following settings are added to VS Code by this extension:
+
+| Setting                                  | Type      | Default Value | Description                                                                                                                                                                                                                                  |
+| ---------------------------------------- | --------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `programmingScreenReader.coreBinaryPath` | `string`  | `""`          | The path to the compiled `code_reader_core` binary, which is built from the [Code Reader Core](https://github.com/chronosacaria/code_reader_core) repository. If it is empty, the extension will fall back to the local `cargo run` command. |
+| `programmingScreenReader.speechEnabled`  | `boolean` | `false`       | This enables or disables speech output that is returned from the reader's output.                                                                                                                                                            |
+| `programmingScreenReader.coreBinaryPath` | `string`  | `spd-say`     | This is the command that is used to call the command that performs the speech that is returned by the reader's output.                                                                                                                       |
+
+Here is an example of what one's local user settings might look like:
+
+```json
+{ 
+  "programmingScreenReader.coreBinaryPath": "/path/to/code_reader_core",
+  "programmingScreenReader.speechEnabled": true,
+  "programmingScreenReader.speechCommand": "spd-say"
+}
+```
+
+For safety reasons, it is essential that the `coreBinaryPath` setting points to a **trusted local binary**.
+The reason for this is that the extension sends the active information that is being provided by VS Code to
+the configured core binary. This allows for the code-aware speech output, but it also means that there are
+data being send back and forth.
 
 ## Example of Intention
 
@@ -91,12 +140,25 @@ This list should not be considered exhaustive until the completion of this proje
 be updated as the project evolves. The names of the extensions, their license and any links to
 repositiories shall be provided.
 
-- EXAMPLE_DEPENDENCY
-  - Author: AUTHOR_NAME
-  - Licenses: [LICENSE_NAME](https://randompicturegenerator.com/dog) (Link currently goes to a
-  random picture generator of dogs)
-  - Repo Link: [REPO_NAME](https://randompicturegenerator.com/cat) (Link currently goes to a
-  random picture generator of cats)
+- `@types/node`
+  - Author: DefinitelyTyped
+  - License: [MIT License](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/LICENSE)
+  - Repo Link: [https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node)
+  - Package [https://www.npmjs.com/package/@types/node](https://www.npmjs.com/package/@types/node)
+- `@types/vscode`
+  - Author: DefinitelyTyped
+  - License: [MIT License](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/LICENSE)
+  - Repo Link: [https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/vscode](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/vscode)
+  - Package [https://www.npmjs.com/package/@types/node](https://www.npmjs.com/package/@types/node)
+- `typescript`
+  - Author: DefinitelyTyped
+  - License: [Apache 2.0](https://github.com/microsoft/TypeScript/blob/main/LICENSE.txt)
+  - Repo Link: [https://github.com/microsoft/TypeScript](https://github.com/microsoft/TypeScript)
+  - Package [https://www.npmjs.com/package/@types/node](https://www.npmjs.com/package/@types/node)
+- `undici`
+  - Author: Matteo Collina and Undici Contributors
+  - License: [MIT License](https://github.com/nodejs/undici/blob/main/LICENSE)
+  - Repo Link: [https://github.com/nodejs/undici](https://github.com/nodejs/undici)
 
 ## Visual Studio Code Extensions Used
 
@@ -112,6 +174,14 @@ repositiories shall be provided.
   - Author: OpenAI
   - License: [Apache 2.0](https://github.com/openai/codex/blob/master/LICENSE)
   - Repo Link: [https://github.com/openai/codex](https://github.com/openai/codex)
+- Dependi
+  - Author: Fill Labs
+  - License: [Custom License](https://openvsx.eclipsecontent.org/fill-labs/dependi/0.7.22/LICENSE.txt)
+  - Repo Link: [https://github.com/filllabs/dependi](https://github.com/filllabs/dependi)
+- Error Lense
+  - Author: Alexander
+  - License: [MIT License](https://github.com/usernamehw/vscode-error-lens/blob/master/LICENSE)
+  - Repo Link: [https://github.com/usernamehw/vscode-error-lens](https://github.com/usernamehw/vscode-error-lens)
 - ESLint
   - Author: Microsoft
   - License: [MIT License](https://github.com/microsoft/vscode-eslint/blob/master/License.txt)
