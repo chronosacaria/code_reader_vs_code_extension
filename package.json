@@ -1,0 +1,65 @@
+{
+  "name": "programming-screen-reader",
+  "displayName": "Programming Screen Reader Extension",
+  "description": "A code-aware screen reader layer for programmers.",
+  "version": "0.0.1",
+  "publisher": "chronosacaria",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "programmingScreenReader.readCurrentLine",
+        "title": "Programming Screen Reader: Read Current Line"
+      },
+      {
+        "command": "programmingScreenReader.readCurrentSymbol",
+        "title": "Programming Screen Reader: Read Current Symbol"
+      },
+      {
+        "command": "programmingScreenReader.readCurrentScope",
+        "title": "Programming Screen Reader: Read Current Scope"
+      },
+      {
+        "command": "programmingScreenReader.readDiagnosticsNearCursor",
+        "title": "Programming Screen Reader: Read Diagnostics Near Cursor"
+      }
+    ],
+    "configuration": {
+      "title": "Programming Screen Reader",
+      "properties": {
+        "programmingScreenReader.coreBinaryPath": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "description": "Path to the compiled code_reader_core binary. If empty, the extension falls back to the 'cargo run' command."
+        },
+        "programmingScreenReader.speechEnabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Speak returned reader output using the configured speech command."
+        },
+        "programmingScreenReader.speechCommand": {
+          "type": "string",
+          "default": "spd-say",
+          "scope": "machine",
+          "description": "Command used to speak the returned reader output."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.0",
+    "@types/vscode": "^1.125.0",
+    "typescript": "^5.9.3"
+  }
+}

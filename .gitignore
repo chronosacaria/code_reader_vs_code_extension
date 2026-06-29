@@ -1,0 +1,17 @@
+# Node Dependencies
+/node_modules/
+
+# VS Code Build Output
+/node_modules/
+/out
+/.vscode-test/
+
+# Logs
+*.log
+
+# Environment Config
+/.env
+
+# OS/Editor Stuffs
+/.DS_Store
+Thumbs.db
