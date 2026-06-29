@@ -29,10 +29,10 @@ The following keybind shortcuts[^1] are added to VS Code by this extension:
 
 | Keybind                        | Command                                                 |
 | ------------------------------ | ------------------------------------------------------- |
-| `CRTL` + `SHIFT` + `ALT` + `1` | Programming Screen Reader: Read Current Line            |
-| `CRTL` + `SHIFT` + `ALT` + `2` | Programming Screen Reader: Read Current Symbol          |
-| `CRTL` + `SHIFT` + `ALT` + `3` | Programming Screen Reader: Read Current Scope           |
-| `CRTL` + `SHIFT` + `ALT` + `4` | Programming Screen Reader: Read Diagnostics Near Cursor |
+| `CTRL` + `SHIFT` + `ALT` + `1` | Programming Screen Reader: Read Current Line            |
+| `CTRL` + `SHIFT` + `ALT` + `2` | Programming Screen Reader: Read Current Symbol          |
+| `CTRL` + `SHIFT` + `ALT` + `3` | Programming Screen Reader: Read Current Scope           |
+| `CTRL` + `SHIFT` + `ALT` + `4` | Programming Screen Reader: Read Diagnostics Near Cursor |
 
 [^1]: These keybind shortcuts are temporary. These are their current states until more ergonomic combinations are determined.
 
@@ -44,7 +44,7 @@ The following settings are added to VS Code by this extension:
 | ---------------------------------------- | --------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `programmingScreenReader.coreBinaryPath` | `string`  | `""`          | The path to the compiled `code_reader_core` binary, which is built from the [Code Reader Core](https://github.com/chronosacaria/code_reader_core) repository. If it is empty, the extension will fall back to the local `cargo run` command. |
 | `programmingScreenReader.speechEnabled`  | `boolean` | `false`       | This enables or disables speech output that is returned from the reader's output.                                                                                                                                                            |
-| `programmingScreenReader.coreBinaryPath` | `string`  | `spd-say`     | This is the command that is used to call the command that performs the speech that is returned by the reader's output.                                                                                                                       |
+| `programmingScreenReader.speechCommand`  | `string`  | `spd-say`     | This is the command that is used to call the command that performs the speech that is returned by the reader's output.                                                                                                                       |
 
 Here is an example of what one's local user settings might look like:
 
@@ -59,7 +59,7 @@ Here is an example of what one's local user settings might look like:
 For safety reasons, it is essential that the `coreBinaryPath` setting points to a **trusted local binary**.
 The reason for this is that the extension sends the active information that is being provided by VS Code to
 the configured core binary. This allows for the code-aware speech output, but it also means that there are
-data being send back and forth.
+data being sent back and forth.
 
 ## Example of Intention
 
@@ -141,22 +141,21 @@ be updated as the project evolves. The names of the extensions, their license an
 repositiories shall be provided.
 
 - `@types/node`
-  - Author: DefinitelyTyped
+  - Authors: [Mirosoft and Node Contributors](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/3f4142e7fe92e9d74a9a4d5545d48c10418edd01/types/node/package.json#L26-#L122)
   - License: [MIT License](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/LICENSE)
   - Repo Link: [https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node)
   - Package [https://www.npmjs.com/package/@types/node](https://www.npmjs.com/package/@types/node)
 - `@types/vscode`
-  - Author: DefinitelyTyped
+  - Authors: [Visual Studio Code Team, Microsoft](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/3f4142e7fe92e9d74a9a4d5545d48c10418edd01/types/vscode/package.json#L15)
   - License: [MIT License](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/LICENSE)
   - Repo Link: [https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/vscode](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/vscode)
   - Package [https://www.npmjs.com/package/@types/node](https://www.npmjs.com/package/@types/node)
 - `typescript`
-  - Author: DefinitelyTyped
+  - Author: [Microsoft Corp.](https://github.com/microsoft/TypeScript/blob/main/package.json#L3)
   - License: [Apache 2.0](https://github.com/microsoft/TypeScript/blob/main/LICENSE.txt)
   - Repo Link: [https://github.com/microsoft/TypeScript](https://github.com/microsoft/TypeScript)
-  - Package [https://www.npmjs.com/package/@types/node](https://www.npmjs.com/package/@types/node)
-- `undici`
-  - Author: Matteo Collina and Undici Contributors
+- `undici-types`
+  - Author: [Matteo Collina and Undici Contributors](https://github.com/nodejs/undici/blob/667d8a3a7496302ce6ede3e29f7fb1f3cc017082/package.json#L14-#L49)
   - License: [MIT License](https://github.com/nodejs/undici/blob/main/LICENSE)
   - Repo Link: [https://github.com/nodejs/undici](https://github.com/nodejs/undici)
 
