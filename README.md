@@ -63,7 +63,7 @@ data being sent back and forth.
 
 ## Example of Intention
 
-The primary intention of this extention is that it would give the user meaningful code-aware feedback
+The primary intention of this extension is that it would give the user meaningful code-aware feedback
 without requiring them to listen to every punctuation character, indentation level, raw syntax token,
 etc. unless a more detailed verbosity mode is requested later.
 
@@ -138,22 +138,23 @@ Studio Code Extensions.
 
 This list should not be considered exhaustive until the completion of this project. This list will
 be updated as the project evolves. The names of the extensions, their license and any links to
-repositiories shall be provided.
+repositories shall be provided.
 
 - `@types/node`
-  - Authors: [Mirosoft and Node Contributors](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/3f4142e7fe92e9d74a9a4d5545d48c10418edd01/types/node/package.json#L26-#L122)
+  - Authors: [Microsoft and Node Contributors](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/3f4142e7fe92e9d74a9a4d5545d48c10418edd01/types/node/package.json#L26-#L122)
   - License: [MIT License](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/LICENSE)
   - Repo Link: [https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node)
-  - Package [https://www.npmjs.com/package/@types/node](https://www.npmjs.com/package/@types/node)
+  - Package: [https://www.npmjs.com/package/@types/node](https://www.npmjs.com/package/@types/node)
 - `@types/vscode`
   - Authors: [Visual Studio Code Team, Microsoft](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/3f4142e7fe92e9d74a9a4d5545d48c10418edd01/types/vscode/package.json#L15)
   - License: [MIT License](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/LICENSE)
   - Repo Link: [https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/vscode](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/vscode)
-  - Package [https://www.npmjs.com/package/@types/node](https://www.npmjs.com/package/@types/node)
+  - Package: [https://www.npmjs.com/package/@types/vscode](https://www.npmjs.com/package/@types/vscode)
 - `typescript`
   - Author: [Microsoft Corp.](https://github.com/microsoft/TypeScript/blob/main/package.json#L3)
   - License: [Apache 2.0](https://github.com/microsoft/TypeScript/blob/main/LICENSE.txt)
   - Repo Link: [https://github.com/microsoft/TypeScript](https://github.com/microsoft/TypeScript)
+  - Package: [https://www.npmjs.com/package/typescript](https://www.npmjs.com/package/typescript)
 - `undici-types`
   - Author: [Matteo Collina and Undici Contributors](https://github.com/nodejs/undici/blob/667d8a3a7496302ce6ede3e29f7fb1f3cc017082/package.json#L14-#L49)
   - License: [MIT License](https://github.com/nodejs/undici/blob/main/LICENSE)
@@ -177,7 +178,7 @@ repositiories shall be provided.
   - Author: Fill Labs
   - License: [Custom License](https://openvsx.eclipsecontent.org/fill-labs/dependi/0.7.22/LICENSE.txt)
   - Repo Link: [https://github.com/filllabs/dependi](https://github.com/filllabs/dependi)
-- Error Lense
+- Error Lens
   - Author: Alexander
   - License: [MIT License](https://github.com/usernamehw/vscode-error-lens/blob/master/LICENSE)
   - Repo Link: [https://github.com/usernamehw/vscode-error-lens](https://github.com/usernamehw/vscode-error-lens)
